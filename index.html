@@ -1,0 +1,885 @@
+<!doctype html>
+<html lang="sw">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mochy Jersy | Custom Jerseys &amp; Team Kits</title>
+  <meta name="description" content="Mochy Jersy designs and prints custom jerseys and team kits.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&display=swap">
+  <style>
+    /* ===== BADILISHA RANGI HAPA (change colours here) ===== */
+    :root {
+      --accent: #C8F03A;
+      /* rangi kuu / main accent */
+      --bg: #0B0F14;
+      /* background */
+      --bg-soft: #10161E;
+      --card: #131A23;
+      --line: #232D3A;
+      --text: #F2F4F7;
+      --muted: #AEB7C4;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Barlow', system-ui, sans-serif;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a:hover {
+      opacity: .85;
+    }
+
+    a:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 3px;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    .section {
+      padding: 96px 0;
+    }
+
+    .eyebrow {
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+
+    .display {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin: 0;
+    }
+
+    h2.display {
+      font-size: 64px;
+      line-height: 1;
+    }
+
+    .h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 28px;
+      text-transform: uppercase;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 18px 34px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 18px;
+    }
+
+    .btn-accent {
+      background: var(--accent);
+      color: var(--bg);
+    }
+
+    .btn-outline {
+      border: 2px solid #3A4554;
+      padding: 16px 32px;
+    }
+
+    /* NAV */
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center;
+      justify-content: space-between;
+      padding: 28px 0;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 28px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 28px;
+      align-items: center;
+      font-weight: 500;
+      color: #C5CCD6;
+    }
+
+    .nav-cta {
+      background: var(--accent);
+      color: var(--bg);
+      padding: 13px 24px;
+      border-radius: 999px;
+      font-weight: 600;
+    }
+
+    /* HERO */
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 48px;
+      align-items: center;
+      padding: 56px 0 96px;
+    }
+
+    .hero-text {
+      flex: 1 1 480px;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .hero h1 {
+      font-size: 112px;
+      line-height: .92;
+      letter-spacing: -1px;
+    }
+
+    .hero p {
+      margin: 0;
+      font-size: 20px;
+      line-height: 1.55;
+      color: var(--muted);
+      max-width: 520px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .hero-media {
+      flex: 1 1 400px;
+      min-width: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-frame {
+      width: 100%;
+      max-width: 520px;
+      aspect-ratio: 4 / 5;
+      border-radius: 40px;
+      overflow: hidden;
+      background: var(--card);
+      border: 1px solid var(--line);
+    }
+
+    .hero-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* STRIP */
+    .strip {
+      background: var(--accent);
+      color: var(--bg);
+    }
+
+    .strip .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 40px;
+      justify-content: space-between;
+      padding-top: 22px;
+      padding-bottom: 22px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 26px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    /* ABOUT */
+    .about {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 48px;
+      padding: 112px 0 40px;
+    }
+
+    .about-title {
+      flex: 1 1 320px;
+      min-width: 0;
+    }
+
+    .about-title h2 {
+      font-size: 64px;
+    }
+
+    .about-body {
+      flex: 1 1 420px;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      font-size: 19px;
+      line-height: 1.65;
+      color: var(--muted);
+    }
+
+    .about-body p {
+      margin: 0;
+    }
+
+    .facts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 8px;
+    }
+
+    .fact {
+      flex: 1 1 160px;
+      border-top: 2px solid var(--accent);
+      padding-top: 14px;
+    }
+
+    .fact strong {
+      display: block;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 26px;
+      text-transform: uppercase;
+      color: var(--text);
+    }
+
+    .fact span {
+      display: block;
+      font-size: 16px;
+      margin-top: 6px;
+    }
+
+    /* COLLECTION */
+    .collection-head {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 44px;
+    }
+
+    .collection-head p {
+      margin: 0;
+      font-size: 18px;
+      color: var(--muted);
+      max-width: 380px;
+    }
+
+    .grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+
+    .item {
+      flex: 1 1 250px;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .item-photo {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      border-radius: 24px;
+      overflow: hidden;
+      background: var(--card);
+      border: 1px solid var(--line);
+    }
+
+    .item-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .item .sub {
+      font-size: 16px;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    .item-cta {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      border-radius: 24px;
+      background: var(--accent);
+      color: var(--bg);
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .item-cta .display {
+      font-size: 44px;
+      line-height: 1;
+    }
+
+    .item-cta a {
+      align-self: flex-start;
+      background: var(--bg);
+      color: var(--text);
+      padding: 14px 26px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 17px;
+    }
+
+    /* SERVICES */
+    .band {
+      background: var(--bg-soft);
+      border-top: 1px solid #1D2733;
+      border-bottom: 1px solid #1D2733;
+    }
+
+    .service {
+      flex: 1 1 260px;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+    }
+
+    .service p {
+      margin: 0;
+      font-size: 16px;
+      line-height: 1.55;
+      color: var(--muted);
+    }
+
+    .service svg {
+      width: 40px;
+      height: 40px;
+      stroke: var(--accent);
+      fill: none;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* PROCESS */
+    .steps {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+    }
+
+    .step {
+      flex: 1 1 220px;
+      min-width: 0;
+    }
+
+    .step .num {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 72px;
+      line-height: 1;
+      color: var(--accent);
+    }
+
+    .step .h3 {
+      margin: 8px 0;
+    }
+
+    .step p {
+      margin: 0;
+      font-size: 16px;
+      line-height: 1.55;
+      color: var(--muted);
+    }
+
+    /* PRICING */
+    .plan {
+      flex: 1 1 280px;
+      min-width: 0;
+      padding: 36px;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .plan .price {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 56px;
+      color: var(--accent);
+    }
+
+    .plan p {
+      margin: 0;
+      font-size: 16px;
+      line-height: 1.55;
+      color: var(--muted);
+    }
+
+    .plan.featured {
+      background: var(--accent);
+      color: var(--bg);
+      border-color: var(--accent);
+    }
+
+    .plan.featured .price,
+    .plan.featured p {
+      color: var(--bg);
+    }
+
+    /* CONTACT */
+    .contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 48px;
+      align-items: center;
+      padding: 112px 0;
+    }
+
+    .contact-text {
+      flex: 1 1 420px;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .contact-text h2 {
+      font-size: 88px;
+      line-height: .95;
+    }
+
+    .contact-text p {
+      margin: 0;
+      font-size: 20px;
+      line-height: 1.55;
+      color: var(--muted);
+      max-width: 480px;
+    }
+
+    .contact-list {
+      flex: 1 1 340px;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .contact-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 22px 26px;
+      border: 1px solid #2B3644;
+      border-radius: 20px;
+      font-size: 18px;
+    }
+
+    .contact-row span:first-child {
+      color: var(--muted);
+    }
+
+    .contact-row span:last-child {
+      font-weight: 600;
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid #1D2733;
+    }
+
+    footer .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: space-between;
+      padding-top: 32px;
+      padding-bottom: 32px;
+      font-size: 15px;
+      color: #8B95A3;
+    }
+
+    footer strong {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 20px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text);
+    }
+
+    /* SIMU / MOBILE */
+    @media (max-width: 720px) {
+      .container {
+        padding: 0 20px;
+      }
+
+      .section {
+        padding: 64px 0;
+      }
+
+      .hero h1 {
+        font-size: 64px;
+      }
+
+      h2.display {
+        font-size: 44px;
+      }
+
+      .about-title h2 {
+        font-size: 44px;
+      }
+
+      .contact-text h2 {
+        font-size: 52px;
+      }
+
+      .strip .container {
+        font-size: 20px;
+      }
+
+      .nav-links {
+        gap: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ============ NAV ============ -->
+  <header class="container">
+    <div class="nav">
+      <a href="#top" class="logo">
+        <svg width="34" height="34" viewBox="0 0 200 220" aria-hidden="true">
+          <path
+            d="M70 10 L30 28 L2 80 L38 98 L52 78 L52 208 L148 208 L148 78 L162 98 L198 80 L170 28 L130 10 C120 28 80 28 70 10 Z"
+            fill="#C8F03A" />
+        </svg>
+        <span>Mochy Jersy</span>
+      </a>
+      <nav class="nav-links" aria-label="Main">
+        <a href="#collection">Collection</a>
+        <a href="#services">Services</a>
+        <a href="#process">Process</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact" class="nav-cta">Order now</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ============ HERO ============ -->
+    <section class="container hero">
+      <div class="hero-text">
+        <div class="eyebrow" style="margin:0">Custom jerseys &amp; team kits</div>
+        <h1 class="display">Wear the team.<br>Own the game.</h1>
+        <p>Mochy Jersy designs and prints jerseys that look sharp on the pitch and feel great all day. Clubs, schools,
+          companies and fans: bring the idea, we bring the kit.</p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-accent">Start your order</a>
+          <a href="#collection" class="btn btn-outline">View the collection</a>
+        </div>
+      </div>
+      <div class="hero-media">
+        <div class="hero-frame">
+          <img src="2.jfif" alt="Purple and black football jersey with gold trim on a hanger">
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ STRIP ============ -->
+    <div class="strip">
+      <div class="container">
+        <span>Custom designs</span>
+        <span>Team kits</span>
+        <span>Names &amp; numbers</span>
+        <span>Full sublimation</span>
+        <span>Bulk orders</span>
+      </div>
+    </div>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="container about">
+      <div class="about-title">
+        <div class="eyebrow">About us</div>
+        <h2 class="display">Built for people who play, support and show up</h2>
+      </div>
+      <div class="about-body">
+        <p>Mochy Jersy is a jersey business focused on quality, fit and identity. Every kit starts with your colours,
+          your crest and your story, then turns into something your team is proud to wear.</p>
+        <p>[ANDIKA HADITHI YAKO: ulianza lini, unahudumia nani, nini kinakutofautisha.]</p>
+        <div class="facts">
+          <div class="fact"><strong>Quality fabric</strong><span class="muted">Breathable, durable, colour-fast.</span>
+          </div>
+          <div class="fact"><strong>Your design</strong><span class="muted">Made to your colours and crest.</span></div>
+          <div class="fact"><strong>Every size</strong><span class="muted">Kids, men, women, full teams.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ COLLECTION ============ -->
+    <section id="collection" class="container section">
+      <div class="collection-head">
+        <h2 class="display">The collection</h2>
+        <p>A look at the jerseys we make and stock. Every design can be changed to your colours, badge and numbers.</p>
+      </div>
+
+      <div class="grid">
+
+        <article class="item">
+          <div class="item-photo"><img src="2.jfif" alt="Purple and black football jersey with gold trim"
+              loading="lazy"></div>
+          <div>
+            <div class="h3">Purple &amp; gold away</div>
+            <div class="sub">Gradient sublimation, gold trim.</div>
+          </div>
+        </article>
+
+        <article class="item">
+          <div class="item-photo"><img src="1.jfif" alt="Cream football jersey with red and gold collar and cuffs"
+              loading="lazy"></div>
+          <div>
+            <div class="h3">Cream retro away</div>
+            <div class="sub">Red and gold collar and cuffs.</div>
+          </div>
+        </article>
+
+        <article class="item">
+          <div class="item-photo"><img src="3.jfif" alt="White football jersey with black shoulder stripes"
+              loading="lazy"></div>
+          <div>
+            <div class="h3">White home shirt</div>
+            <div class="sub">Black stripes, clean matchday look.</div>
+          </div>
+        </article>
+
+        <article class="item">
+          <div class="item-photo"><img src="mm.jfif" alt="Pink striped football jersey with black shoulder stripes"
+              loading="lazy"></div>
+          <div>
+            <div class="h3">Pink striped home</div>
+            <div class="sub">Bold stripes, black detailing.</div>
+          </div>
+        </article>
+
+        <article class="item">
+          <div class="item-photo"><img src="4.jfif" alt="Maroon football jersey with gold and black trim and number 11"
+              loading="lazy"></div>
+          <div>
+            <div class="h3">Maroon &amp; gold away</div>
+            <div class="sub">Textured pattern, number 11 print.</div>
+          </div>
+        </article>
+
+        <article class="item">
+          <div class="item-photo"><img src="5.jfif" alt="White football jersey with gold and red chest band"
+              loading="lazy"></div>
+          <div>
+            <div class="h3">White with gold band</div>
+            <div class="sub">Red and gold chest band, retro feel.</div>
+          </div>
+        </article>
+
+        <article class="item">
+          <div class="item-photo"><img src="6.jfif" alt="Red football jersey with black and white trim on a hanger"
+              loading="lazy"></div>
+          <div>
+            <div class="h3">Red home shirt</div>
+            <div class="sub">Classic red, black and white trim.</div>
+          </div>
+        </article>
+
+        <article class="item">
+          <div class="item-cta">
+            <div class="display">Your design could be next</div>
+            <a href="#contact">Order your jersey</a>
+          </div>
+          <div>
+            <div class="h3">Custom order</div>
+            <div class="sub">Your colours, badge and numbers.</div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ============ SERVICES ============ -->
+    <div id="services" class="band">
+      <section class="container section">
+        <div class="eyebrow">What we do</div>
+        <h2 class="display" style="margin-bottom:48px">Services</h2>
+        <div class="grid">
+          <div class="service">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 20h9" />
+              <path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z" />
+            </svg>
+            <div class="h3">Custom design</div>
+            <p>Send a sketch, a logo or an idea. We turn it into a ready-to-print layout.</p>
+          </div>
+          <div class="service">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+            </svg>
+            <div class="h3">Team &amp; bulk orders</div>
+            <p>Matching kits for clubs, schools, companies and events, all sizes in one order.</p>
+          </div>
+          <div class="service">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 7V4h16v3" />
+              <path d="M9 20h6" />
+              <path d="M12 4v16" />
+            </svg>
+            <div class="h3">Names &amp; numbers</div>
+            <p>Player names, numbers and sponsor logos placed cleanly and printed to last.</p>
+          </div>
+          <div class="service">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="1" y="3" width="15" height="13" />
+              <path d="M16 8h4l3 3v5h-7Z" />
+              <circle cx="5.5" cy="18.5" r="2.5" />
+              <circle cx="18.5" cy="18.5" r="2.5" />
+            </svg>
+            <div class="h3">Delivery</div>
+            <p>[WEKA MAENEO NA MUDA WA DELIVERY.]</p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ============ PROCESS ============ -->
+    <section id="process" class="container section">
+      <h2 class="display" style="margin-bottom:48px">How it works</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="num">01</div>
+          <div class="h3">Share your idea</div>
+          <p>Colours, logo, sport and how many jerseys you need.</p>
+        </div>
+        <div class="step">
+          <div class="num">02</div>
+          <div class="h3">Approve the design</div>
+          <p>We send a mockup. Change anything until it is perfect.</p>
+        </div>
+        <div class="step">
+          <div class="num">03</div>
+          <div class="h3">We print &amp; stitch</div>
+          <p>Your kit is produced and checked piece by piece.</p>
+        </div>
+        <div class="step">
+          <div class="num">04</div>
+          <div class="h3">Collect or delivered</div>
+          <p>Pick up your order or have it brought to you.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PRICING ============ -->
+    <div id="pricing" class="band">
+      <section class="container section">
+        <h2 class="display" style="margin-bottom:48px">Pricing</h2>
+        <div class="grid">
+          <div class="plan">
+            <div class="h3">Single jersey</div>
+            <div class="price">[BEI YAKO]</div>
+            <p>One custom jersey with name and number.</p>
+          </div>
+          <div class="plan featured">
+            <div class="h3">Team set</div>
+            <div class="price">[BEI YAKO]</div>
+            <p>[IDADI YA CHINI] jerseys, one design, all names and numbers.</p>
+          </div>
+          <div class="plan">
+            <div class="h3">Full kit</div>
+            <div class="price">[BEI YAKO]</div>
+            <p>Shirt, shorts and socks in matching colours.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ============ CONTACT ============ -->
+    <section id="contact" class="container contact">
+      <div class="contact-text">
+        <h2 class="display">Ready for your kit?</h2>
+        <p>Tell us your sport, colours and quantity. We reply with a design and a quote.</p>
+      </div>
+      <div class="contact-list">
+        <!-- Badilisha href na namba/barua pepe yako halisi -->
+        <a class="contact-row" href="https://wa.me/255000000000"><span>WhatsApp / Phone</span><span>[NAMBA
+            YAKO]</span></a>
+        <a class="contact-row" href="mailto:you@example.com"><span>Email</span><span>[EMAIL YAKO]</span></a>
+        <a class="contact-row"
+          href="https://instagram.com/yourhandle"><span>Instagram</span><span>[@YOURHANDLE]</span></a>
+        <div class="contact-row"><span>Location</span><span>[MAHALI ULIPO]</span></div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <strong>Mochy Jersy</strong>
+      <span>Custom jerseys and team kits</span>
+    </div>
+  </footer>
+
+</body>
+
+</html>
